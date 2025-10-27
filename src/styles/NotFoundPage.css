@@ -1,0 +1,58 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; 
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sad-buho-logo {
+  width: 150px; 
+  height: auto;
+  margin-bottom: 30px;
+  filter: grayscale(80%) brightness(0.8); 
+  border-radius: 20%;
+}
+
+.not-found-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.not-found-container p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.back-home-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #a0a0a0;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.back-home-button:hover {
+  background-color: #c0c0c0;
+}
+
+@media (min-width: 768px) {
+  .sad-buho-logo {
+    width: 200px;
+  }
+  .not-found-container h1 {
+    font-size: 3em;
+  }
+  .not-found-container p {
+    font-size: 1.2em;
+  }
+}

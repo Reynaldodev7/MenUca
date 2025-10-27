@@ -1,0 +1,192 @@
+/* Estilos para layout móvil (por defecto) */
+.login-page-layout {
+    text-align: center;
+    gap: 30px;
+}
+
+.right-panel { 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.right-panel .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Ocultar elementos de escritorio en móvil */
+.left-panel .app-title-desktop, 
+.left-panel .buho-logo-desktop, 
+.left-panel .tagline-desktop,
+.right-panel .welcome-message-desktop,
+.right-panel .switch-text-desktop {
+    display: none;  
+}
+
+/* Mostrar elementos de móvil */
+.left-panel .app-title-mobile {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+.left-panel .buho-logo-mobile {
+    width: 120px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+.right-panel .switch-text-mobile {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 0.9em;
+}
+.right-panel .switch-button-mobile {
+    margin-top: 10px;
+}
+
+/* MEDIA QUERY para pantallas de escritorio (más de 768px de ancho) */
+@media (min-width: 768px) {
+    .login-page-layout {
+        flex-direction: row;
+        padding: 0;
+        background-color: transparent;
+        height: 100%;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+        gap: 0;
+    }
+
+    .left-panel {
+        flex: 1;
+        background-color: #1a1a1a; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        box-sizing: border-box;
+        text-align: center;
+        border-top-left-radius: 12px; 
+        border-bottom-left-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        min-height: 600px; 
+    }
+
+    .left-panel::before { 
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MDk0Mzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3MDAwMDAwMDB8MA&ixlib=rb-4.0.3&q=80&w=1080'); 
+        background-size: cover;
+        background-position: center;
+        opacity: 0.2; 
+        z-index: 0; 
+    }
+
+    /* Mostrar elementos de escritorio y ocultar los de móvil */
+    .left-panel .app-title-desktop, 
+    .left-panel .buho-logo-desktop, 
+    .left-panel .tagline-desktop {
+        display: block;
+        z-index: 1; 
+        color: white; 
+    }
+    
+    .left-panel .app-title-desktop {
+        font-size: 3.5em; 
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+    }
+
+    .left-panel .buho-logo-desktop {
+        width: 180px; 
+        height: auto;
+        margin-bottom: 20px;
+        filter: brightness(1.2); 
+    }
+
+    .left-panel .tagline-desktop {
+        font-size: 1.2em;
+        color: #ddd;
+        font-weight: normal;
+    }
+
+    /* Ocultar elementos de móvil en escritorio */
+    .left-panel .app-title-mobile, 
+    .left-panel .buho-logo-mobile {
+        display: none;
+    }
+
+
+    /* Panel Derecho: Formulario */
+    .right-panel {
+        flex: 1; 
+        background-color: #2e2e2e; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        padding: 40px;
+        box-sizing: border-box;
+        border-top-right-radius: 12px; 
+        border-bottom-right-radius: 12px;
+        min-height: 600px; 
+    }
+
+    /* Mostrar elementos de escritorio */
+    .right-panel .welcome-message-desktop {
+        display: block; 
+        font-size: 1.8em;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .right-panel .login-form {
+        max-width: 350px; 
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px; 
+        margin-bottom: 20px; 
+    }
+    .right-panel .form-group {
+        max-width: 350px;
+        width: 100%;
+    }
+
+
+    .right-panel .switch-text-desktop {
+        display: block; 
+        text-align: center;
+        margin-top: 20px; 
+        font-size: 0.95em;
+        color: #ccc;
+    }
+
+    .right-panel .switch-text-desktop .link {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .right-panel .switch-text-desktop .link:hover {
+        text-decoration: underline;
+    }
+
+    /* Ocultar elementos de móvil en escritorio */
+    .right-panel .switch-text-mobile, 
+    .right-panel .switch-button-mobile {
+        display: none;
+    }
+}

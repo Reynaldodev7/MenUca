@@ -1,0 +1,219 @@
+.register-page-layout {
+    text-align: center;
+    gap: 30px; 
+}
+
+.right-panel .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Ocultar elementos de escritorio en móvil */
+.left-panel .app-title-desktop, 
+.left-panel .buho-logo-desktop, 
+.left-panel .tagline-desktop,
+.right-panel .header-register-desktop, 
+.right-panel .switch-text-desktop {
+    display: none; 
+}
+
+/* Mostrar elementos de móvil para el header de registro */
+.left-panel .header-register-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    order: -1;
+}
+.left-panel .btn-back-mobile {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-panel .page-title-mobile {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    flex-grow: 1; 
+    text-align: center;
+}
+.left-panel .buho-logo-small-mobile {
+    width: 40px; 
+    height: auto;
+}
+
+.right-panel .register-form {
+    gap: 15px; 
+}
+
+/* MEDIA QUERY para pantallas de escritorio (más de 768px de ancho) */
+@media (min-width: 768px) {
+    .register-page-layout {
+        flex-direction: row; 
+        padding: 0;
+        background-color: transparent;
+        height: 100%;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+        gap: 0;
+    }
+
+    .left-panel.register-left-panel {
+        flex: 1; 
+        background-color: #1a1a1a; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        box-sizing: border-box;
+        text-align: center;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        min-height: 600px;
+    }
+    .left-panel.register-left-panel::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MDk0Mzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3MDAwMDAwMDB8MA&ixlib=rb-4.0.3&q=80&w=1080'); 
+        background-size: cover;
+        background-position: center;
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    /* Mostrar elementos de escritorio en el panel izquierdo de registro */
+    .left-panel .app-title-desktop, 
+    .left-panel .buho-logo-desktop, 
+    .left-panel .tagline-desktop {
+        display: block;
+        z-index: 1;
+        color: white;
+    }
+    .left-panel .app-title-desktop {
+        font-size: 3.5em; 
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .left-panel .buho-logo-desktop {
+        width: 180px; 
+        height: auto;
+        margin-bottom: 20px;
+        filter: brightness(1.2);
+    }
+    .left-panel .tagline-desktop {
+        font-size: 1.2em;
+        color: #ddd;
+        font-weight: normal;
+    }
+    
+    /* Ocultar elementos de móvil en escritorio */
+    .left-panel .header-register-mobile {
+        display: none;
+    }
+
+
+    /* Panel Derecho: Formulario de Registro */
+    .right-panel {
+        flex: 1;
+        background-color: #2e2e2e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        box-sizing: border-box;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        min-height: 600px;
+    }
+
+    /* Mostrar header de registro para escritorio */
+    .right-panel .header-register-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+    .right-panel .btn-back-desktop {
+        display: flex;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2em;
+        cursor: pointer;
+        padding: 0 10px 0 0;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+    }
+    .right-panel .page-title-desktop {
+        display: block;
+        flex-grow: 1;
+        text-align: center;
+        margin: 0;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: white;
+    }
+    .right-panel .buho-logo-small-desktop {
+        display: block;
+        width: 40px;
+        height: 40px;
+        filter: brightness(1.2);
+    }
+
+    .right-panel .register-form {
+        max-width: 350px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .right-panel .form-group {
+        max-width: 350px;
+        width: 100%;
+    }
+
+
+    .right-panel .switch-text-desktop {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 0.95em;
+        color: #ccc;
+    }
+
+    .right-panel .switch-text-desktop .link {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .right-panel .switch-text-desktop .link:hover {
+        text-decoration: underline;
+    }
+}
