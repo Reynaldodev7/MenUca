@@ -5,6 +5,7 @@ import RegisterPage from './pages/RegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
 import EditAccount from './pages/EditAccountPage';
+import RestaurantPage from './pages/RestaurantPage';
 import './App.css'; 
 
 function App() {
@@ -42,6 +43,12 @@ function App() {
         <Route 
           path="edit-account" 
           element={<EditAccount />} 
+        />
+
+        {/* Ruta restaurant */}
+        <Route 
+          path="restaurant/:restaurantId" 
+          element={<RestaurantPage />} 
         />
 
       </Routes>

@@ -148,7 +148,7 @@ const HomePage = () => {
                                     <span className="rating">{renderStars(restaurant.rating)}</span>
                                     <span className="price">{restaurant.price}</span>
                                 </div>
-                                <a href={restaurant.link} className="view-menu-button">Ver Menú</a>
+                                <Link to={restaurant.link} className="view-menu-button">Ver Menú</Link>
                             </div>
                         </div>
                     ))}
