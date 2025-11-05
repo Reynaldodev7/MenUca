@@ -1,0 +1,307 @@
+/* Variables CSS */
+body, html {
+    margin: 0; 
+    padding: 0;
+    /* Asegura que ocupen el 100% del viewport (área visible) */
+    width: 100%;
+    height: 100%;
+    /* Asegura que el color de fondo de tu app (oscuro) sea visible si hay áreas vacías */
+    background-color: var(--bg-dark, #2c2c2c); 
+}
+
+/* Variables CSS */
+:root {
+    --bg-dark: #2c2c2c;
+    --bg-light-dark: #3a3a3a;
+    --text-color: #f0f0f0;
+    --primary-color: #ff8c00; /* Naranja para botones/acentos */
+    --border-color: #4a4a4a;
+    --card-bg: #3a3a3a;
+}
+
+/* Estilos Generales para el Home Page */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    /* CLAVE: Asegura que la página ocupe el 100% de la altura de la vista */
+    min-height: 100vh; 
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* AJUSTE CLAVE: Padding mínimo para ahorrar espacio vertical (aprox. 50px de altura total) */
+    padding: 8px 30px; 
+    background-color: var(--bg-light-dark);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Altura fija para poder calcular el espacio restante */
+    height: 50px; 
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+.logo-container .logo {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.search-bar {
+    position: relative;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px 10px 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input::placeholder {
+    color: #bbb;
+}
+
+.search-bar .fa-magnifying-glass {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 18px;
+}
+
+.user-controls .account-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.user-controls .account-button:hover {
+    background-color: #cc6f00;
+    transform: translateY(-1px);
+}
+
+/* Main Content Area */
+.home-main {
+    display: flex;
+    flex: 1;
+    /* AJUSTE CLAVE: Reducido padding vertical para ahorrar espacio */
+    padding: 10px 30px; 
+    box-sizing: border-box; 
+    /* Calcule la altura restante (100vh - altura del header - padding vertical) */
+    min-height: calc(100vh - 50px - 20px); 
+}
+
+/* Sidebar de Filtros */
+.filters-sidebar {
+    width: 250px;
+    min-width: 200px;
+    padding: 10px 25px; 
+    background-color: var(--bg-light-dark);
+    border-radius: 10px;
+    margin-right: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* CLAVE: Usamos el espacio restante del home-main para asegurar que se vea todo */
+    height: 100%; 
+    position: sticky;
+    top: 10px; 
+}
+
+.filters-sidebar h3 {
+    font-size: 19px;
+    margin-bottom: 15px; /* Reducción de margen para ahorrar espacio */
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.filters-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px; /* Reducción de margen para ahorrar espacio */
+}
+
+.filters-sidebar li {
+    padding: 8px 0; /* Reducción de padding */
+    cursor: pointer;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+}
+
+.filters-sidebar li i {
+    color: #bbb;
+    font-size: 16px;
+}
+
+.filters-sidebar li:hover {
+    color: var(--primary-color);
+}
+
+/* Grid de Restaurantes */
+.restaurants-grid {
+    flex-grow: 1;
+    display: grid;
+    /* Ajuste de minmax para 3 columnas en pantallas comunes */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 15px; 
+}
+
+.restaurant-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    /* Altura basada en el viewport para que quepan dos filas */
+    height: calc((100vh - 50px - 20px - 15px - 15px) / 2); 
+    /* 100vh - (Header: 50px) - (Main Padding: 20px) - (Grid Gap: 15px) / 2 filas */
+}
+
+.restaurant-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.restaurant-card img {
+    width: 100%;
+    /* AJUSTE CLAVE: Altura fija en porcentaje para que se adapte al tamaño de la card */
+    height: 50%; 
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.restaurant-card .card-info {
+    padding: 12px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.restaurant-card h3 {
+    margin: 0 0 5px 0; /* Ajuste de margen */
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.restaurant-card .cuisine {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 8px; /* Ajuste de margen */
+}
+
+.restaurant-card .rating-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Ajuste de margen */
+}
+
+.restaurant-card .rating {
+    font-size: 15px;
+    color: #ffd700;
+}
+
+.restaurant-card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.restaurant-card .view-menu-button {
+    display: block;
+    width: 100%;
+    padding: 8px; /* Reducido para ahorrar espacio */
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.restaurant-card .view-menu-button:hover {
+    background-color: #cc6f00;
+    transform: translateY(-2px);
+}
+
+/* Responsiveness (Se mantiene optimizada para el móvil) */
+
+@media (max-width: 1024px) {
+    .home-main {
+        padding: 15px;
+    }
+    .filters-sidebar {
+        margin-right: 15px;
+        width: 180px;
+    }
+    .restaurants-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .home-header {
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .home-main {
+        min-height: auto; /* Desactivar la altura fija en móvil */
+        flex-direction: column;
+        padding: 15px;
+    }
+    .filters-sidebar {
+        height: fit-content;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        position: static;
+        top: auto;
+    }
+    .restaurants-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+    .restaurant-card {
+        height: auto; /* Desactivar altura fija en móvil */
+    }
+}

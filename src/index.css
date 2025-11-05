@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -35,7 +35,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Contenedor de Login y Register */
 .auth-container {
     background-color: #2e2e2e; 
     padding: 30px 25px;
@@ -48,7 +47,6 @@ body {
     gap: 20px;
 }
 
-/* Campos de Formulario*/
 .form-group {
     display: flex;
     flex-direction: column;
@@ -77,7 +75,6 @@ input::placeholder {
     color: #888;
 }
 
-/* Botones */
 button {
     padding: 12px 20px;
     border: none;
@@ -130,11 +127,11 @@ button {
   justify-content: center;
   text-align: center;
   text-decoration: none; 
-}
+} */
 
 
 /* MEDIA QUERY para pantallas de escritorio (más de 768px de ancho) */
-
+/* 
 @media (min-width: 768px) {
     body {
         background-color: #1a1a1a; 
@@ -165,4 +162,4 @@ button {
         max-width: 350px; 
         margin: 0 auto; 
     }
-}
+} */

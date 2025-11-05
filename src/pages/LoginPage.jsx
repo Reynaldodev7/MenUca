@@ -4,7 +4,7 @@ import BuhoLogo from '../assets/logo_blanco.png';
 import '../styles/LoginPage.css';
 
 function LoginPage() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
