@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BuhoLogo from '../assets/logo_blanco.png'; 
 import '../styles/LoginPage.css';
 
 function LoginPage() {
+
+  const navegate = useNavigate();
   const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
 
@@ -11,7 +13,8 @@ function LoginPage() {
     e.preventDefault(); 
     console.log('Intentando iniciar sesión con:', { email, password });
     if (email === 'test@buho.com' && password === '12345') {
-      alert('¡Inicio de Sesión Exitoso!');
+      navegate("/home")
+      //alert('¡Inicio de Sesión Exitoso!');
     } else {
       alert('Credenciales incorrectas o incompletas.');
     }
