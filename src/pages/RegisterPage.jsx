@@ -36,6 +36,8 @@ function RegisterPage() {
   };
 
   return (
+    <div className='container-main'>
+    <div className="app-container">
     <div className="auth-container register-page-layout">
       
       {/* Panel Izquierdo: Marca y Logo */}
@@ -90,6 +92,8 @@ function RegisterPage() {
         
         <p className="switch-text-desktop">¿Ya tienes una cuenta? <Link to="/" className="link">Iniciar Sesion</Link></p>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

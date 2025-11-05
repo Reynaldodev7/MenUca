@@ -18,6 +18,8 @@ function LoginPage() {
   };
 
   return (
+    <div className='container-main'>
+    <div className="app-container">
     <div className="auth-container login-page-layout">
       
       {/* Panel Izquierdo: Marca y Logo */}
@@ -68,6 +70,8 @@ function LoginPage() {
             Crear cuenta
         </Link>
       </div>
+    </div>
+    </div>
     </div>
   );
 }

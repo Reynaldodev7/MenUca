@@ -1,4 +1,4 @@
-/* :root {
+:root {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -6,6 +6,8 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; 
 }
+
+/*
 
 body {
   margin: 0;
@@ -24,6 +26,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+*/
 
 .app-container {
     display: flex;
@@ -127,11 +130,11 @@ button {
   justify-content: center;
   text-align: center;
   text-decoration: none; 
-} */
+} 
 
 
 /* MEDIA QUERY para pantallas de escritorio (más de 768px de ancho) */
-/* 
+
 @media (min-width: 768px) {
     body {
         background-color: #1a1a1a; 
@@ -141,7 +144,7 @@ button {
         max-width: 1000px; 
         width: 90%; 
         min-height: 600px; 
-        padding: 0;
+        padding: 0; 
         border-radius: 12px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
         overflow: hidden; 
@@ -162,4 +165,4 @@ button {
         max-width: 350px; 
         margin: 0 auto; 
     }
-} */
+}
