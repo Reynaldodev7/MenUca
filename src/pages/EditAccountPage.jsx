@@ -26,6 +26,10 @@ export default function EditAccount() {
     navigate("/home");
   };
 
+  const handleLogin = () => {
+    navigate("/");
+  };
+
   return (
     <div className="edit-account-page">
       <header className="home-header">
@@ -43,7 +47,7 @@ export default function EditAccount() {
         </div>
 
         <div className="user-controls">
-          <button className="account-button logout-btn">
+          <button className="account-button logout-btn" onClick={handleLogin}>
             <i className="fa-solid fa-right-from-bracket"></i>
             Cerrar sesión
           </button>
