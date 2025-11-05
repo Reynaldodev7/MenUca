@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import NotFoundPage from './pages/NotFoundPage';
 import HomePage from './pages/HomePage';
+import EditAccount from './pages/EditAccountPage';
 import './App.css'; 
 
 function App() {
@@ -35,6 +36,12 @@ function App() {
         <Route 
           path="*" 
           element={<NotFoundPage />} 
+        />
+
+        {/* Ruta para editar cuenta */}
+        <Route 
+          path="edit-account" 
+          element={<EditAccount />} 
         />
 
       </Routes>

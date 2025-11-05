@@ -1,0 +1,141 @@
+@import url("./homepage.css");
+
+/* Página general */
+.edit-account-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+}
+
+/* Contenedor principal */
+.edit-account-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Tarjeta del formulario */
+.edit-card {
+  position: relative;
+  background-color: var(--bg-light-dark);
+  padding: 50px 40px 40px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+/* Botón de retroceso con imagen */
+.back-button {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  line-height: 0;
+  display: inline-block;
+}
+
+.back-button img {
+  width: 40px;
+  height: 28px;
+  filter: invert(100%);
+  display: block;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+/* Imagen de perfil */
+.profile-picture-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  background-color: #fff;
+}
+
+/* Título */
+.edit-card h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.edit-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Grupos del formulario */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #ddd;
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Botón de guardar */
+.save-button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.save-button:hover {
+  background-color: #cc6f00;
+  transform: translateY(-2px);
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+  background-color: #b94a48 !important;
+}
+
+.logout-btn:hover {
+  background-color: #932f2e !important;
+}

@@ -3,7 +3,7 @@
 //import logo from '../assets/buho-eats-logo.png'; // Asumiendo que tienes un logo en assets
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BuhoLogo from '../assets/logo_blanco.png'; 
 import '../styles/HomePage.css';
 
@@ -85,7 +85,7 @@ const HomePage = () => {
         }
         return stars + ` ${rating}`;
     };
-
+    const navigate = useNavigate();
     return (
         <div className="home-page">
             {/* Header */}
@@ -100,7 +100,7 @@ const HomePage = () => {
                     <i className="fa-solid fa-magnifying-glass"></i> {/* Icono de lupa, asume FontAwesome */}
                 </div>
                 <div className="user-controls">
-                    <button className="account-button">
+                    <button onClick={() => navigate("/edit-account")} className="account-button">
                         <i className="fa-solid fa-user"></i> {/* Icono de usuario */}
                         Mi Cuenta
                     </button>
