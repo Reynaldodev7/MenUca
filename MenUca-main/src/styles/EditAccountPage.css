@@ -1,0 +1,403 @@
+@import url("./homepage.css");
+
+:root {
+  --bg-dark: #141414;
+  --bg-light-dark: #2c2c2c;
+  --text-color: #f0f0f0;
+  --primary-color: #ff8c00;
+  --border-color: #3a3a3a;
+}
+
+/* Página general */
+.edit-account-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+}
+
+/* Contenedor principal */
+.edit-account-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(20px, 5vw, 60px) clamp(10px, 3vw, 40px);
+  min-height: calc(100vh - 80px);
+}
+
+/* Tarjeta del formulario */
+.edit-card {
+  position: relative;
+  background-color: var(--bg-light-dark);
+  padding: clamp(40px, 8vw, 60px) clamp(20px, 5vw, 50px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: min(95%, 600px);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Botón de retroceso */
+.back-button {
+  position: absolute;
+  top: clamp(20px, 4vw, 30px);
+  left: clamp(20px, 4vw, 30px);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  line-height: 0;
+  display: inline-block;
+  z-index: 10;
+}
+
+.back-button img {
+  width: clamp(32px, 6vw, 44px);
+  height: auto;
+  filter: invert(100%);
+  display: block;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+/* Imagen de perfil */
+.profile-picture-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(20px, 4vw, 30px);
+}
+
+.profile-picture {
+  width: clamp(80px, 15vw, 120px);
+  height: clamp(80px, 15vw, 120px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  background-color: #fff;
+}
+
+/* Título */
+.edit-card h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: clamp(20px, 4vw, 30px);
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: bold;
+}
+
+/* Formulario */
+.edit-card form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: clamp(16px, 3vw, 24px);
+}
+
+/* Grupos del formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ddd;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.form-group input {
+  padding: clamp(12px, 2.5vw, 16px);
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+  background-color: #1a1a1a;
+  color: var(--text-color);
+  font-size: clamp(14px, 2.5vw, 16px);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #2a2a2a;
+  color: #999;
+  cursor: not-allowed;
+  border-color: #444;
+}
+
+/* Botón de guardar */
+.save-button {
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 32px);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: min(200px, 100%);
+  margin-top: 10px;
+}
+
+.save-button:hover:not(:disabled) {
+  background-color: #cc6f00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+.save-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+  background-color: #dc3545 !important;
+}
+
+.logout-btn:hover:not(:disabled) {
+  background-color: #c82333 !important;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* Mensajes de estado */
+.message {
+  padding: clamp(12px, 2.5vw, 16px);
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: clamp(14px, 2.5vw, 16px);
+  border: 2px solid transparent;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #f8d7da;
+  border-color: #dc3545;
+}
+
+.success-message {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #d4edda;
+  border-color: #28a745;
+}
+
+/* Estados de carga */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 8vw, 4rem);
+  color: var(--text-color);
+  min-height: 300px;
+}
+
+.loading-spinner {
+  border: 3px solid #3a3a3a;
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  width: clamp(40px, 8vw, 60px);
+  height: clamp(40px, 8vw, 60px);
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Información del perfil */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: clamp(20px, 4vw, 24px);
+  color: var(--text-color);
+}
+
+.user-role {
+  color: var(--primary-color);
+  font-style: italic;
+  margin: 4px 0 0 0;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 500;
+}
+
+/* Acciones del formulario */
+.form-actions {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-top: clamp(1.5rem, 4vw, 2rem);
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cancel-button {
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 32px);
+  border: none;
+  border-radius: 10px;
+  background-color: #6c757d;
+  color: white;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: min(140px, 100%);
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.cancel-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Información de la cuenta */
+.account-info {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: clamp(1.5rem, 4vw, 2rem);
+  border-top: 2px solid var(--border-color);
+}
+
+.account-info h4 {
+  color: var(--primary-color);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  font-size: clamp(18px, 4vw, 20px);
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.status-active {
+  color: #28a745;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .edit-account-main {
+    padding: 15px 5px;
+    align-items: center;
+  }
+  
+  .edit-card {
+    padding: 35px 15px 25px 15px;
+    border-radius: 12px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cancel-button,
+  .save-button {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Responsive para pantallas grandes */
+@media (min-width: 1200px) {
+  .edit-account-main {
+    padding: 80px 40px;
+  }
+  
+  .edit-card {
+    padding: 60px 50px 50px 50px;
+  }
+}
+
+/* Responsive para pantallas extra grandes */
+@media (min-width: 1600px) {
+  .edit-card {
+    width: min(90%, 700px);
+    padding: 70px 60px 60px 60px;
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .back-button,
+  .save-button,
+  .cancel-button {
+    transition: none;
+  }
+  
+  .loading-spinner {
+    animation: none;
+  }
+}
+
+/* Modo alto contraste */
+@media (prefers-contrast: high) {
+  .form-group input {
+    border-width: 3px;
+  }
+  
+  .save-button,
+  .cancel-button {
+    border: 2px solid currentColor;
+  }
+}

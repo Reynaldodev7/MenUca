@@ -1,0 +1,270 @@
+.register-restaurant-page {
+    background-color: #141414;
+    min-height: 100vh;
+    color: white;
+}
+
+.register-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2c2c2c;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.register-header .logo-container {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff8c00;
+    cursor: pointer;
+}
+
+.register-header .back-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.register-header .back-button:hover {
+    background-color: #5a6268;
+}
+
+.register-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.register-container h1 {
+    text-align: center;
+    color: #ff8c00;
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.progress-step span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3a3a3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.progress-step.active span {
+    background-color: #ff8c00;
+    color: white;
+}
+
+.progress-step p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.progress-step.active p {
+    color: #ff8c00;
+}
+
+.form-step {
+    background-color: #2c2c2c;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #3a3a3a;
+}
+
+.form-step h2 {
+    color: #ff8c00;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ddd;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff8c00;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+}
+
+.dish-form {
+    background-color: #3a3a3a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #4a4a4a;
+}
+
+.dish-form h3 {
+    color: #ff8c00;
+    margin-bottom: 1rem;
+}
+
+.remove-dish-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: end;
+}
+
+.remove-dish-button:hover {
+    background-color: #c82333;
+}
+
+.add-dish-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.add-dish-button:hover {
+    background-color: #218838;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.next-button,
+.back-button,
+.submit-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.next-button {
+    background-color: #ff8c00;
+    color: white;
+    width: 100%;
+}
+
+.next-button:hover {
+    background-color: #cc6f00;
+}
+
+.back-button {
+    background-color: #6c757d;
+    color: white;
+    flex: 1;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    flex: 1;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.submit-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.error-message {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #f8d7da;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #dc3545;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .register-container {
+        padding: 1rem;
+    }
+    
+    .form-step {
+        padding: 1rem;
+    }
+    
+    .progress-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

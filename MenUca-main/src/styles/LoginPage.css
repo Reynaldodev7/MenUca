@@ -1,0 +1,426 @@
+/* Variables CSS */
+:root {
+  --primary-orange: #ff8c00;
+  --dark-bg: #141414;
+  --card-dark: #2c2c2c;
+  --card-light: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #888888;
+  --border-color: #444444;
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --shadow-light: rgba(255, 140, 0, 0.2);
+}
+
+/* Reset y base */
+.container-main {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+  overflow: auto;
+  padding: clamp(10px, 3vw, 30px);
+}
+
+/* Layout principal - Mobile First */
+.login-page-layout {
+  display: flex;
+  flex-direction: column;
+  width: min(95%, 400px);
+  background: var(--card-dark);
+  border-radius: clamp(16px, 4vw, 24px);
+  box-shadow: 0 8px 32px var(--shadow-dark);
+  overflow: hidden;
+  min-height: min(80vh, 600px);
+}
+
+/* Panel izquierdo - Solo imagen en mobile */
+.left-panel {
+  position: relative;
+  min-height: 200px;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b00 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(20px, 5vw, 40px);
+  overflow: hidden;
+}
+
+.left-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.buho-logo-mobile {
+  width: clamp(80px, 20vw, 120px);
+  height: auto;
+  filter: brightness(0) invert(1);
+  z-index: 1;
+}
+
+.app-title-mobile {
+  font-size: clamp(24px, 6vw, 32px);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: clamp(10px, 3vw, 20px) 0 0 0;
+  text-align: center;
+  z-index: 1;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+/* Panel derecho - Formulario */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(30px, 6vw, 50px) clamp(20px, 4vw, 40px);
+  background: var(--card-dark);
+}
+
+.welcome-message-mobile {
+  font-size: clamp(20px, 5vw, 24px);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: clamp(20px, 5vw, 30px);
+  text-align: center;
+}
+
+/* Formulario */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 4vw, 24px);
+  width: 100%;
+  max-width: 350px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: clamp(14px, 3vw, 16px);
+}
+
+.form-group input {
+  padding: clamp(14px, 3vw, 16px);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  background: var(--card-light);
+  color: var(--text-primary);
+  font-size: clamp(14px, 3vw, 16px);
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 3px var(--shadow-light);
+  background: var(--card-light);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Botones */
+.btn-primary {
+  padding: clamp(14px, 3vw, 16px);
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b00 100%);
+  color: white;
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  padding: clamp(12px, 3vw, 14px);
+  border: 2px solid var(--primary-orange);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--primary-orange);
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-orange);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Enlaces y texto */
+.switch-text-mobile {
+  margin: clamp(20px, 5vw, 30px) 0 clamp(10px, 3vw, 15px) 0;
+  color: var(--text-secondary);
+  font-size: clamp(14px, 3vw, 16px);
+  text-align: center;
+}
+
+.link {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #ff6b00;
+  text-decoration: underline;
+}
+
+/* Elementos ocultos en mobile */
+.left-panel .app-title-desktop,
+.left-panel .buho-logo-desktop,
+.left-panel .tagline-desktop,
+.right-panel .welcome-message-desktop,
+.right-panel .switch-text-desktop {
+  display: none;
+}
+
+/* ========== DESKTOP STYLES ========== */
+@media (min-width: 768px) {
+  .login-page-layout {
+    flex-direction: row;
+    width: min(95%, 1000px);
+    min-height: min(80vh, 650px);
+    border-radius: clamp(20px, 4vw, 28px);
+  }
+
+  /* Panel izquierdo - Desktop */
+  .left-panel {
+    flex: 1;
+    min-height: auto;
+    padding: clamp(30px, 6vw, 60px);
+    border-radius: clamp(20px, 4vw, 28px) 0 0 clamp(20px, 4vw, 28px);
+  }
+
+  .left-panel::before {
+    opacity: 0.2;
+  }
+
+  .buho-logo-desktop {
+    display: block;
+    width: clamp(100px, 15vw, 160px);
+    height: auto;
+    filter: brightness(0) invert(1);
+    z-index: 1;
+    margin-bottom: clamp(20px, 4vw, 30px);
+  }
+
+  .app-title-desktop {
+    display: block;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: clamp(10px, 2vw, 15px);
+    text-align: center;
+    z-index: 1;
+    text-shadow: 2px 2px 8px var(--shadow-dark);
+  }
+
+  .tagline-desktop {
+    display: block;
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--text-secondary);
+    text-align: center;
+    z-index: 1;
+    font-weight: 500;
+  }
+
+  /* Ocultar elementos mobile en desktop */
+  .buho-logo-mobile,
+  .app-title-mobile,
+  .welcome-message-mobile {
+    display: none;
+  }
+
+  /* Panel derecho - Desktop */
+  .right-panel {
+    flex: 1;
+    padding: clamp(40px, 8vw, 80px) clamp(30px, 6vw, 60px);
+    border-radius: 0 clamp(20px, 4vw, 28px) clamp(20px, 4vw, 28px) 0;
+  }
+
+  .welcome-message-desktop {
+    display: block;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: clamp(30px, 6vw, 40px);
+    text-align: center;
+  }
+
+  .login-form {
+    max-width: 380px;
+    gap: clamp(20px, 4vw, 28px);
+  }
+
+  .switch-text-desktop {
+    display: block;
+    margin-top: clamp(25px, 5vw, 35px);
+    color: var(--text-secondary);
+    font-size: clamp(14px, 2.5vw, 16px);
+    text-align: center;
+  }
+
+  /* Ocultar elementos mobile en desktop */
+  .switch-text-mobile,
+  .btn-secondary {
+    display: none;
+  }
+}
+
+/* ========== LARGE DESKTOP STYLES ========== */
+@media (min-width: 1200px) {
+  .login-page-layout {
+    width: min(90%, 1200px);
+    min-height: 700px;
+  }
+
+  .left-panel {
+    padding: 60px 50px;
+  }
+
+  .right-panel {
+    padding: 80px 60px;
+  }
+
+  .login-form {
+    max-width: 400px;
+  }
+}
+
+/* ========== ESTADOS DE CARGA Y ERROR ========== */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.1);
+  color: #f8d7da;
+  padding: clamp(12px, 3vw, 16px);
+  border-radius: 12px;
+  border: 1px solid #dc3545;
+  font-size: clamp(14px, 3vw, 16px);
+  text-align: center;
+  margin-bottom: clamp(16px, 4vw, 24px);
+}
+
+.success-message {
+  background: rgba(40, 167, 69, 0.1);
+  color: #d4edda;
+  padding: clamp(12px, 3vw, 16px);
+  border-radius: 12px;
+  border: 1px solid #28a745;
+  font-size: clamp(14px, 3vw, 16px);
+  text-align: center;
+  margin-bottom: clamp(16px, 4vw, 24px);
+}
+
+/* ========== MEJORAS DE ACCESIBILIDAD ========== */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-secondary,
+  .form-group input {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .form-group input {
+    border-width: 3px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    border: 2px solid currentColor;
+  }
+}
+
+/* ========== MODO OSCURO MEJORADO ========== */
+@media (prefers-color-scheme: dark) {
+  .right-panel {
+    background: var(--card-dark);
+  }
+  
+  .form-group input {
+    background: var(--card-light);
+  }
+}
+
+/* ========== PANTALLAS MUY PEQUEÑAS ========== */
+@media (max-width: 360px) {
+  .container-main {
+    padding: 5px;
+  }
+  
+  .login-page-layout {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .right-panel {
+    padding: 25px 15px;
+  }
+}
+
+/* ========== PANTALLAS EXTRA GRANDES ========== */
+@media (min-width: 1600px) {
+  .login-page-layout {
+    width: min(80%, 1400px);
+    min-height: 800px;
+  }
+  
+  .left-panel {
+    padding: 80px 60px;
+  }
+  
+  .right-panel {
+    padding: 100px 80px;
+  }
+}
